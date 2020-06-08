@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './NavBar';
+import ImageGrid from './ImageGrid';
 
 function App() {
+  const image = {
+    id: '1',
+    image_url: 'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/01_ValleDelCocora_Colombia_Latinoamerica.jpeg',
+    tags: [
+      'Valle Del Cocora',
+      'Colombia',
+      'Latinoamerica'
+    ]
+  };  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <ImageGrid />
     </div>
   );
 }
