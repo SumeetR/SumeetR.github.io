@@ -56,13 +56,13 @@ const calculateColsRows = (width: any, index: number): { cols: any, rows: number
     case 2:
     case 8:
     case 9:
-      return { cols: 6, rows: 5 };
+      return { cols: 6, rows: 8 };
     case 4:
     case 5:
     case 6:
-      return { cols: 4, rows: 3 };
+      return { cols: 4, rows: 6 };
     default:
-      return { cols: 12, rows: 10 };
+      return { cols: 12, rows: 15 };
   }
 };
 
