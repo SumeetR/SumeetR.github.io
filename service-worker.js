@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SumeetR.github.io/precache-manifest.bacb4e93be04e221dba6b581394fa32e.js"
+  "/SumeetR.github.io/precache-manifest.63ca7e79e7543dbdb11fc3232be86f74.js"
 );
 
 self.addEventListener('message', (event) => {
