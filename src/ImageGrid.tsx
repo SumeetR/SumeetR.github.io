@@ -48,7 +48,7 @@ const getMetadata = (img: string) => {
 
 const calculateColsRows = (width: any, index: number): { cols: any, rows: number } => {
   if (isWidthDown('sm', width)) {
-    return { cols: 12, rows: 5 };
+    return { cols: 12, rows: 2 };
   }
   const last_digit = index % 10;
   switch (last_digit) {
@@ -56,13 +56,13 @@ const calculateColsRows = (width: any, index: number): { cols: any, rows: number
     case 2:
     case 8:
     case 9:
-      return { cols: 6, rows: 8 };
+      return { cols: 6, rows: 3 };
     case 4:
     case 5:
     case 6:
-      return { cols: 4, rows: 6 };
+      return { cols: 4, rows: 2 };
     default:
-      return { cols: 12, rows: 15 };
+      return { cols: 12, rows: 4 };
   }
 };
 
@@ -71,7 +71,7 @@ function AdvancedGridList(props: {width: any}) {
   const {width} = props;
   return (
     <div className={classes.root}>
-      <GridList cellHeight={50} cols={12} spacing={1} className={classes.gridList}>
+      <GridList cols={12} spacing={1} className={classes.gridList}>
         {images.map((tile: {img: string}, index: number) => {
           const { cols, rows } = calculateColsRows(width, index);
           const details = getMetadata(tile.img);
