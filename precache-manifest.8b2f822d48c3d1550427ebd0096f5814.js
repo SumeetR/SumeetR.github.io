@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d80a04cde93b562fffbce496a67668d",
+    "revision": "0a10cb46a5c5e2b002c714ccf31fac02",
     "url": "https://sumcho.com/index.html"
   },
   {
