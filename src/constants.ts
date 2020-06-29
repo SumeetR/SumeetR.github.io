@@ -1,5 +1,8 @@
 export const images = [
   {
+    img: 'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/08_BocaChica_RD_Latinoamerica.jpeg'
+  },
+  {
     img: 'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/07_Canarias_Spain_Europe.jpeg'
   },
   {
