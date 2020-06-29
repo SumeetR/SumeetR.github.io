@@ -4,7 +4,8 @@ import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import { getImages, ImageMeta} from './helpers';
+import Tag from './Tag';
+import { getImages, ImageMeta } from '../helpers';
 
 interface Props {
   setTag: (tag?: string) => void;
@@ -58,12 +59,6 @@ const calculateColsRows = (width: any, index: number): { cols: any, rows: number
     default:
       return { cols: 12, rows: 4 };
   }
-};
-
-
-const Tag = (props: { tag: string, onClick: (tag: string) => void}) => {
-  const { tag, onClick} = props;
-  return <span onClick={() => onClick(tag)}> #{tag} </span>;
 };
 
 function AdvancedGridList(props: Props) {

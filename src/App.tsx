@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import NavBar from './NavBar';
-import ImageGrid from './ImageGrid';
-
+import NavBar from './components/NavBar';
+import ImageGrid from './components/ImageGrid';
 
 interface State {
   tag?: string;
