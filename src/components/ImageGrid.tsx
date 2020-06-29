@@ -4,7 +4,14 @@ import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import { images } from './constants';
+import Tag from './Tag';
+import { getImages, ImageMeta } from '../helpers';
+
+interface Props {
+  setTag: (tag?: string) => void;
+  tag?: string;
+  width: any;
+}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,18 +41,6 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const getMetadata = (img: string) => {
-  const base = 'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/';
-  const items = ((img.split(base)[1]).split('.jpeg')[0]).split('_');
-  return {
-    id: items[0],
-    place: items[1],
-    country: items[2],
-    region: items[3],
-    tags: [items[1], items[2], items[3]]
-  };
-};
-
 const calculateColsRows = (width: any, index: number): { cols: any, rows: number } => {
   if (isWidthDown('sm', width)) {
     return { cols: 12, rows: 2 };
@@ -66,21 +61,21 @@ const calculateColsRows = (width: any, index: number): { cols: any, rows: number
   }
 };
 
-function AdvancedGridList(props: {width: any}) {
+function AdvancedGridList(props: Props) {
   const classes = useStyles();
-  const {width} = props;
+  const {width, setTag, tag} = props;
+  const images = getImages(tag);
   return (
     <div className={classes.root}>
       <GridList cols={12} spacing={1} className={classes.gridList}>
-        {images.map((tile: {img: string}, index: number) => {
+        {images.map((tile: ImageMeta, index: number) => {
           const { cols, rows } = calculateColsRows(width, index);
-          const details = getMetadata(tile.img);
           return (
             <GridListTile className={classes.tile} key={`${index}_${tile.img}`} cols={cols} rows={rows}>
-              <img src={tile.img} alt={`${details.id}_${details.tags.join('_')}`} />
+              <img src={tile.img} alt={`${tile.id}_${tile.tags.join('_')}`} />
               <GridListTileBar
-                title={details.id}
-                subtitle={details.tags.map((tag: string, tag_index: number) => <span key={`${tag}_${tag_index}`} > #{tag} </span>)}
+                title={tile.id}
+                subtitle={tile.tags.map((tag: string, tag_index: number) => <Tag key={`${tag}_${tag_index}`} tag={tag} onClick={setTag} />)}
                 titlePosition="top"
                 className={classes.titleBar}
               />
