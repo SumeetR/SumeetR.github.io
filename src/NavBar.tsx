@@ -36,7 +36,7 @@ export default function NavBar(props: Props) {
             sumcho.com
           </Typography>
           <Typography>
-            {tag ? 'Selected: ' : ''} {tag} {tag ? <button onClick={() => setTag()}>x</button> : ''}
+            {tag ? 'Selected: #' : ''}{tag} {tag ? <button onClick={() => setTag()}>x</button> : ''}
           </Typography>
         </Toolbar>
       </AppBar>
