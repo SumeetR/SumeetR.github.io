@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "https://sumcho.com/static/css/main.1ab17644.chunk.css",
-    "main.js": "https://sumcho.com/static/js/main.e0f1f41d.chunk.js",
-    "main.js.map": "https://sumcho.com/static/js/main.e0f1f41d.chunk.js.map",
+    "main.js": "https://sumcho.com/static/js/main.3c54d2fb.chunk.js",
+    "main.js.map": "https://sumcho.com/static/js/main.3c54d2fb.chunk.js.map",
     "runtime-main.js": "https://sumcho.com/static/js/runtime-main.fc33dc31.js",
     "runtime-main.js.map": "https://sumcho.com/static/js/runtime-main.fc33dc31.js.map",
-    "static/js/2.d2e8e62f.chunk.js": "https://sumcho.com/static/js/2.d2e8e62f.chunk.js",
-    "static/js/2.d2e8e62f.chunk.js.map": "https://sumcho.com/static/js/2.d2e8e62f.chunk.js.map",
+    "static/js/2.13affa01.chunk.js": "https://sumcho.com/static/js/2.13affa01.chunk.js",
+    "static/js/2.13affa01.chunk.js.map": "https://sumcho.com/static/js/2.13affa01.chunk.js.map",
     "index.html": "https://sumcho.com/index.html",
-    "precache-manifest.70b9cb64f4616d4abfae900d9203f5af.js": "https://sumcho.com/precache-manifest.70b9cb64f4616d4abfae900d9203f5af.js",
+    "precache-manifest.6961ee3a38515807f02f7bfb0a52ce49.js": "https://sumcho.com/precache-manifest.6961ee3a38515807f02f7bfb0a52ce49.js",
     "service-worker.js": "https://sumcho.com/service-worker.js",
     "static/css/main.1ab17644.chunk.css.map": "https://sumcho.com/static/css/main.1ab17644.chunk.css.map",
-    "static/js/2.d2e8e62f.chunk.js.LICENSE.txt": "https://sumcho.com/static/js/2.d2e8e62f.chunk.js.LICENSE.txt"
+    "static/js/2.13affa01.chunk.js.LICENSE.txt": "https://sumcho.com/static/js/2.13affa01.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fc33dc31.js",
-    "static/js/2.d2e8e62f.chunk.js",
+    "static/js/2.13affa01.chunk.js",
     "static/css/main.1ab17644.chunk.css",
-    "static/js/main.e0f1f41d.chunk.js"
+    "static/js/main.3c54d2fb.chunk.js"
   ]
 }
