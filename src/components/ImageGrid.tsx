@@ -75,7 +75,7 @@ function AdvancedGridList(props: Props) {
               <img src={tile.img} alt={`${tile.id}_${tile.tags.join('_')}`} />
               <GridListTileBar
                 title={tile.id}
-                subtitle={tile.tags.map((tag: string, tag_index: number) => <Tag key={`${tag}_${tag_index}`} tag={tag} onClick={setTag} />)}
+                subtitle={tile.tags.map((text: string, tag_index: number) => <Tag key={`${tag}_${tag_index}`} tag={text} selected={tag} onClick={setTag} />)}
                 titlePosition="top"
                 className={classes.titleBar}
               />
