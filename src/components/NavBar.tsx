@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import Tag from './Tag';
 interface Props {
   setTag: () => void;
   tag?: string;
@@ -36,7 +36,7 @@ export default function NavBar(props: Props) {
             sumcho.com
           </Typography>
           <Typography>
-            {tag ? 'Selected: #' : ''}{tag} {tag ? <button onClick={() => setTag()}>x</button> : ''}
+            {tag && <Tag tag={tag} selected={tag} onClick={setTag} />}
           </Typography>
         </Toolbar>
       </AppBar>
