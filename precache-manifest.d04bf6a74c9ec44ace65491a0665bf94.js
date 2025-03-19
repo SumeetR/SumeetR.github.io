@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b00d5529fe4bab4a6426574e5c8976e0",
+    "revision": "2ac8cb2be93cb84a82235ac9d0e618eb",
     "url": "https://sumcho.com/index.html"
   },
   {
-    "revision": "717382a769938db0b907",
+    "revision": "ee5cbf3b02fe50065199",
     "url": "https://sumcho.com/static/css/main.1ab17644.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://sumcho.com/static/js/2.109eca86.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "717382a769938db0b907",
-    "url": "https://sumcho.com/static/js/main.137d5f42.chunk.js"
+    "revision": "ee5cbf3b02fe50065199",
+    "url": "https://sumcho.com/static/js/main.76e3c752.chunk.js"
   },
   {
     "revision": "4a955b1eccdb754b2364",
