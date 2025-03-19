@@ -41,24 +41,40 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const calculateColsRows = (width: any, index: number): { cols: any, rows: number } => {
+interface Block {
+  cols: number;
+  rows: number;
+}
+interface BlockMatrix {
+  [key: number]: Block[];
+}
+const SINGLE_BLOCK_SMALL: Block = { cols: 12, rows: 2};
+const SINGLE_BLOCK: Block = { cols: 12, rows: 4 };
+const DOUBLE_BLOCK: Block = { cols: 6, rows: 3 };
+const TRIPLE_BLOCK: Block = { cols: 4, rows: 2 };
+const BLOCK_MATRIX: BlockMatrix = {
+  0: [SINGLE_BLOCK, DOUBLE_BLOCK, DOUBLE_BLOCK, SINGLE_BLOCK, TRIPLE_BLOCK, TRIPLE_BLOCK, TRIPLE_BLOCK],
+  1: [SINGLE_BLOCK],
+  2: [DOUBLE_BLOCK, DOUBLE_BLOCK],
+  3: [SINGLE_BLOCK, DOUBLE_BLOCK, DOUBLE_BLOCK], 
+  4: [SINGLE_BLOCK, DOUBLE_BLOCK, DOUBLE_BLOCK, SINGLE_BLOCK],
+  5: [DOUBLE_BLOCK, DOUBLE_BLOCK, TRIPLE_BLOCK, TRIPLE_BLOCK, TRIPLE_BLOCK],
+  6: [SINGLE_BLOCK, DOUBLE_BLOCK, DOUBLE_BLOCK, TRIPLE_BLOCK, TRIPLE_BLOCK, TRIPLE_BLOCK]
+};
+
+const getBlock = (width: any, index: number, total: number): Block => {
   if (isWidthDown('sm', width)) {
-    return { cols: 12, rows: 2 };
+    return SINGLE_BLOCK_SMALL;
   }
-  const last_digit = index % 10;
-  switch (last_digit) {
-    case 1:
-    case 2:
-    case 8:
-    case 9:
-      return { cols: 6, rows: 3 };
-    case 4:
-    case 5:
-    case 6:
-      return { cols: 4, rows: 2 };
-    default:
-      return { cols: 12, rows: 4 };
-  }
+  const fullBlocks = Math.floor(total / 7);
+  const position = index % 7;
+  let remainder = 0;
+  // NOTE: Only change remainder for extra blocks
+  if (index >= fullBlocks * 7) {
+    remainder = total % 7;
+  } 
+  const block = BLOCK_MATRIX[remainder][position];
+  return block;
 };
 
 function AdvancedGridList(props: Props) {
@@ -69,7 +85,7 @@ function AdvancedGridList(props: Props) {
     <div className={classes.root}>
       <GridList cols={12} spacing={1} className={classes.gridList}>
         {images.map((tile: ImageMeta, index: number) => {
-          const { cols, rows } = calculateColsRows(width, index);
+          const { cols, rows } = getBlock(width, index, images.length);
           return (
             <GridListTile className={classes.tile} key={`${index}_${tile.img}`} cols={cols} rows={rows}>
               <img src={tile.img} alt={`${tile.id}_${tile.tags.join('_')}`} />
