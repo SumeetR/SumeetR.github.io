@@ -1,4 +1,6 @@
 export const images = [
+  'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/18_Uyuni_Bolivia_Latinoamerica.jpeg',
+  'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/17_BahiaAguilas_RD_Latinoamerica.jpeg',
   'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/16_PeritoMoreno_Argentina_Latinoamerica.jpeg',
   'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/15_Chiloe_Chile_Latinoamerica.jpeg',
   'https://sumcho-dot-com-images.s3-eu-west-1.amazonaws.com/images/14_Manhattan_Newyork_Northamerica.jpeg',
